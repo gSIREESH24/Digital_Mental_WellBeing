@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { EmotionModelViewer } from "./EmotionModelViewer";
+import { auth } from "@/lib/firebase";
+import { saveMoodNote } from "@/lib/db";
 
 export function MoodLogger() {
   const [note, setNote] = useState("");
@@ -56,6 +58,13 @@ export function MoodLogger() {
       localStorage.setItem(`mood_emotion_${today}`, currentEmotion);
     }
     console.log("Saving mood note:", note, "Emotion:", currentEmotion);
+    // Persist note to Firestore dailyStats if user logged in
+    const user = auth.currentUser;
+    if (user && note.trim()) {
+      saveMoodNote(user.uid, note.trim()).catch((err) => {
+        console.error("Error saving mood note to DB:", err);
+      });
+    }
     setNote("");
   };
 

@@ -70,6 +70,33 @@ export default function ResourceVideos() {
           </div>
         </section>
 
+        <section className="container mx-auto px-4 py-8">
+          <Card className="border-2 border-primary/20 bg-primary/5 overflow-hidden">
+            <CardContent className="p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center">
+              <div className="flex-1 space-y-4">
+                <Badge className="bg-primary text-primary-foreground hover:bg-primary/90">Creators' Recommendation</Badge>
+                <h2 className="text-2xl md:text-3xl font-bold font-accent">Try This Technique</h2>
+                <p className="text-lg text-muted-foreground">
+                  We highly recommend you try this specific technique as shown in the video. It's a powerful way to ground yourself and find immediate relief.
+                </p>
+                <div className="flex items-center gap-2 text-sm font-medium text-primary">
+                  <PlayCircle className="w-5 h-5" />
+                  <span>Watch Now</span>
+                </div>
+              </div>
+              <div className="flex-1 w-full max-w-xl rounded-xl overflow-hidden shadow-lg border-2 border-background">
+                <iframe
+                  src="https://www.youtube.com/embed/KSpAdw4625U"
+                  title="Recommended Technique"
+                  className="w-full aspect-video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         <section className="container mx-auto px-4 py-12 grid gap-8 lg:grid-cols-2">
           {interactiveVideos.map((video) => (
             <Card key={video.id} className="border-2 shadow-lg hover:shadow-xl transition-all animate-fade-in-up">

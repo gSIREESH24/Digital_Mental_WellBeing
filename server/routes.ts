@@ -2,7 +2,7 @@ import { Express, Request, Response } from "express";
 import { createServer, Server } from "http";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyDnP4F0Ca9UC_HEADM49A5peeD5XuFBHzQ");
+const genAI = new GoogleGenerativeAI("AIzaSyBWnwkz-eCw_GeoG2huCAAneTcmTYBxF6Y");
 
 function formatBotResponse(text: string) {
   return text

@@ -83,7 +83,7 @@ function Model({ emotion }: { emotion: "happy" | "sad" | "angry" | "idle" | "fea
         Object.values(actions).forEach((action) => {
           if (action) {
             action.reset();
-            action.setLoop(THREE.LoopRepeat);
+            action.setLoop(THREE.LoopRepeat, Infinity);
             action.play();
           }
         });

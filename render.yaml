@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: digital-mental-wellbeing
+    env: node
+    region: singapore
+    buildCommand: |
+      npm install
+      npm run build
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_KEY
+        sync: false        # Add value in Render dashboard
+      - key: SESSION_SECRET
+        sync: false        # Add your secret manually

@@ -120,7 +120,6 @@
     "bufferutil": "^4.0.8"
   },
   "description": "A comprehensive digital mental wellness platform designed specifically for college students, providing AI-powered support, professional counseling services, and evidence-based resources.",
-  "main": "postcss.config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gSIREESH24/Digital_Mental_WellBeing.git"

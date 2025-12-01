@@ -23,7 +23,7 @@ async function startServer() {
   }
 
   const PORT = parseInt(process.env.PORT || "5000", 10);
-  const HOST = "127.0.0.1";
+  const HOST = "0.0.0.0";
 
   server.listen(PORT, HOST, () => {
     log(`✅ MindEase Campus running at http://${HOST}:${PORT}`);
